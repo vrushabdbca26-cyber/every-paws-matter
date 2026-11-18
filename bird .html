@@ -1,0 +1,502 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Every Feather Matters | Wild Birds & Avian Protection</title>
+
+<style>
+:root {
+    --sky-blue: #2b580c;
+    --gold: #f6c90e;
+    --cloud: #f4f7f6;
+    --forest: #639a67;
+    --ink: #1b262c;
+    --muted: #536162;
+    --white: #ffffff;
+    --feather-red: #d96047;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--ink);
+    background: var(--cloud);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+}
+
+header {
+    background: var(--white);
+    padding: 14px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 12px #0000000d;
+}
+
+.logo {
+    color: var(--sky-blue);
+    font-weight: 800;
+    font-size: 1.25rem;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: .95rem;
+}
+
+nav a:hover {
+    color: var(--feather-red);
+}
+
+.hero {
+    padding: 78px 7%;
+    min-height: 440px;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    gap: 35px;
+    background: #e8f0e6;
+}
+
+.eyebrow {
+    color: var(--forest);
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+h1 {
+    color: var(--sky-blue);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.05;
+    margin: 12px 0;
+}
+
+h2 {
+    color: var(--sky-blue);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin: 0 0 12px;
+}
+
+h3 {
+    color: var(--sky-blue);
+    margin: 10px 0 5px;
+}
+
+p {
+    margin-top: 8px;
+}
+
+.hero p {
+    max-width: 580px;
+    font-size: 1.1rem;
+}
+
+.hero img {
+    width: 100%;
+    max-height: 330px;
+    object-fit: cover;
+    border-radius: 24px;
+}
+
+.button {
+    display: inline-block;
+    background: var(--forest);
+    color: var(--white);
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-weight: 700;
+    margin: 12px 8px 0 0;
+    border: 0;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: var(--sky-blue);
+}
+
+section {
+    padding: 64px 7%;
+}
+
+.section-intro {
+    color: var(--muted);
+    max-width: 720px;
+    margin-bottom: 28px;
+}
+
+.center {
+    text-align: center;
+}
+
+.species-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 22px;
+    margin-top: 28px;
+}
+
+.species-card {
+    background: var(--white);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px #2b580c12;
+}
+
+.species-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    display: block;
+}
+
+.species-card div {
+    padding: 16px;
+}
+
+.species-card p {
+    color: var(--muted);
+    font-size: .95rem;
+    margin-bottom: 0;
+}
+
+.soft {
+    background: #dce5da;
+}
+
+.values {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-top: 26px;
+}
+
+.value-card {
+    background: var(--white);
+    border-left: 5px solid var(--gold);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.value-card .emoji {
+    font-size: 2rem;
+}
+
+.shelter-panel {
+    background: var(--forest);
+    color: var(--white);
+    padding: 32px;
+    border-radius: 22px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.shelter-panel h2,
+.shelter-panel h3 {
+    color: var(--white);
+}
+
+.shelter-panel a {
+    color: var(--white);
+}
+
+.shelter-panel .button {
+    background: var(--feather-red);
+}
+
+footer {
+    background: var(--sky-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 25px 7%;
+}
+
+footer p {
+    margin: 5px;
+}
+
+@media (max-width: 760px) {
+    header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    nav {
+        gap: 10px 15px;
+    }
+
+    .hero,
+    .shelter-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding-top: 50px;
+    }
+
+    section {
+        padding: 48px 6%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🐦 Every Feather Matters</div>
+
+    <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#species">Bird Species</a>
+        <a href="#kindness">Protect Birds</a>
+        <a href="#habitats">Bird Sanctuaries</a>
+    </nav>
+</header>
+
+<main>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+
+        <div>
+            <div class="eyebrow">Protect • Feed • Preserve</div>
+
+            <h1>Every Feather Matters</h1>
+
+            <p>
+                Birds fill our skies with color and music while
+                supporting healthy trees and plants. Protect local
+                bird species, build bird-friendly habitats, and
+                care for injured wildlife.
+            </p>
+
+            <a class="button" href="#kindness">Help Wild Birds</a>
+            <a class="button" href="#species">Discover Species</a>
+        </div>
+
+        <img src="https://images.unsplash.com/photo-1444464666168-49d633b86797?auto=format&fit=crop&w=1000&q=85"
+        alt="Colorful bird sitting on a tree branch">
+
+    </section>
+
+    <!-- Bird Species Section -->
+    <section id="species">
+
+        <div class="center">
+            <h2>Meet Our Feathered Friends</h2>
+
+            <p class="section-intro" style="margin-left:auto;margin-right:auto;">
+                From urban sparrows to magnificent parrots,
+                birds enrich ecosystems across the planet.
+            </p>
+        </div>
+
+        <div class="species-grid">
+
+            <article class="species-card">
+                <img src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=700&q=80"
+                alt="Parrot">
+                <div>
+                    <h3>Macaw Parrot</h3>
+                    <p>Highly intelligent and social birds found in rainforests. Known for brilliant plumage.</p>
+                </div>
+            </article>
+
+            <article class="species-card">
+                <img src="https://images.unsplash.com/photo-1452570053594-1b985d6ea890?auto=format&fit=crop&w=700&q=80"
+                alt="Hummingbird">
+                <div>
+                    <h3>Hummingbird</h3>
+                    <p>Tiny nectar-feeders with rapid wingbeats. Vital pollinators for flowering plants.</p>
+                </div>
+            </article>
+
+            <article class="species-card">
+                <img src="https://images.unsplash.com/photo-1516641396056-0ce60a85d49f?auto=format&fit=crop&w=700&q=80"
+                alt="Owl">
+                <div>
+                    <h3>Owl</h3>
+                    <p>Nocturnal hunters with exceptional eyesight and quiet flight. They keep pest populations in check.</p>
+                </div>
+            </article>
+
+            <article class="species-card">
+                <img src="https://images.unsplash.com/photo-1591824438708-ce405f36ba3d?auto=format&fit=crop&w=700&q=80"
+                alt="Sparrow">
+                <div>
+                    <h3>House Sparrow</h3>
+                    <p>Familiar urban birds that benefit from small birdhouses, fresh water, and seed feeders.</p>
+                </div>
+            </article>
+
+            <article class="species-card">
+                <img src="https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=700&q=80"
+                alt="Kingfisher">
+                <div>
+                    <h3>Kingfisher</h3>
+                    <p>Famous for swift diving skills near clean lakes and rivers. A symbol of healthy waters.</p>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Protect Birds Section -->
+    <section class="soft" id="kindness">
+
+        <div class="center">
+            <h2>How to Be Kind to Birds</h2>
+
+            <p class="section-intro" style="margin-left:auto;margin-right:auto;">
+                Simple changes in our backyards and balconies
+                can keep local wild birds safe and nourished.
+            </p>
+        </div>
+
+        <div class="values">
+
+            <article class="value-card">
+                <div class="emoji">💧</div>
+                <h3>Provide Water Bowls</h3>
+                <p>Leave clean water on balconies or yards, especially during hot summer months.</p>
+            </article>
+
+            <article class="value-card">
+                <div class="emoji">🕊️</div>
+                <h3>Prevent Window Collisions</h3>
+                <p>Apply window decals or stickers to prevent birds from flying into glass reflection.</p>
+            </article>
+
+            <article class="value-card">
+                <div class="emoji">🌿</div>
+                <h3>Plant Native Trees</h3>
+                <p>Native trees provide natural food sources like berries, seeds, and safe nesting spots.</p>
+            </article>
+
+            <article class="value-card">
+                <div class="emoji">🩺</div>
+                <h3>Help Injured Birds</h3>
+                <p>Contact an avian rescuer for guidance when you find an injured bird.</p>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Bird Sanctuary Section -->
+    <section id="habitats">
+
+        <div class="center">
+            <h2>Bird Sanctuary Partnerships</h2>
+
+            <p class="section-intro" style="margin-left:auto;margin-right:auto;">
+                Protecting bird migration routes and preserving
+                forests requires community action.
+            </p>
+        </div>
+
+        <div class="values">
+
+            <article class="value-card">
+                <h3>Protect Nesting Sites</h3>
+                <p>Avoid trimming trees during spring nesting season to keep eggs and chicks safe.</p>
+            </article>
+
+            <article class="value-card">
+                <h3>Feed Responsibly</h3>
+                <p>Offer grains, seeds, and fresh fruit instead of processed bread or salty foods.</p>
+            </article>
+
+            <article class="value-card">
+                <h3>Support Refuges</h3>
+                <p>Volunteering with wildlife reserves helps rescue injured migratory birds.</p>
+            </article>
+
+            <article class="value-card">
+                <h3>Spread Awareness</h3>
+                <p>Teach your community about local bird species and their ecological value.</p>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Bird Rescue Section -->
+    <section class="soft" id="shelters">
+
+        <div class="shelter-panel">
+
+            <div>
+                <div class="eyebrow" style="color:#fff3c4;">
+                    Safe Haven for Birds
+                </div>
+
+                <h2>Join Our Avian Rescue Network</h2>
+
+                <p>
+                    We work alongside avian rescue centers and wildlife
+                    rehabilitators to rescue injured wild birds and
+                    return them to the sky.
+                </p>
+
+                <p>
+                    Help us build bird feeders, distribute nest boxes,
+                    and advocate for bird safety.
+                </p>
+            </div>
+
+            <div>
+                <h3>Our Promise</h3>
+
+                <p>
+                    Promoting wildlife protection, supporting rescues,
+                    and sharing accurate bird care guides.
+                </p>
+
+                <a class="button" href="#kindness">
+                    Learn How to Help
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<!-- Footer -->
+<footer>
+    <p><strong>🐦 Every Feather Matters</strong></p>
+    <p>Keep the skies safe. Protect winged life.</p>
+    <p>© 2026 Every Feather Matters | Student Web Project</p>
+</footer>
+
+</body>
+</html>

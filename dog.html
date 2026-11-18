@@ -1,0 +1,544 @@
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Every Paw Matters | Dog Care & Adoption</title>
+
+<style>
+:root {
+  --deep-blue: #493323;
+  --teal: #65a765;
+  --soft-aqua: #fff8ef;
+  --ocean-blue: #98704c;
+  --ink: #302820;
+  --muted: #74665b;
+  --white: #ffffff;
+  --coral: #e78b52;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--soft-aqua);
+  line-height: 1.6;
+}
+
+header {
+  background: var(--white);
+  padding: 14px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  color: var(--deep-blue);
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: .95rem;
+}
+
+nav a:hover {
+  color: var(--coral);
+}
+
+.hero {
+  padding: 78px 7%;
+  min-height: 440px;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 35px;
+  background: #f5e8d8;
+}
+
+.eyebrow {
+  color: var(--teal);
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+h1 {
+  color: var(--deep-blue);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  margin: 12px 0;
+}
+
+h2 {
+  color: var(--deep-blue);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin: 0 0 12px;
+}
+
+h3 {
+  color: var(--deep-blue);
+  margin: 10px 0 5px;
+}
+
+p {
+  margin-top: 8px;
+}
+
+.hero p {
+  max-width: 580px;
+  font-size: 1.1rem;
+}
+
+.hero img {
+  width: 100%;
+  max-height: 330px;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+.button {
+  display: inline-block;
+  background: var(--ocean-blue);
+  color: var(--white);
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-weight: bold;
+  margin: 12px 8px 0 0;
+}
+
+.button:hover {
+  background: var(--deep-blue);
+}
+
+section {
+  padding: 64px 7%;
+}
+
+.section-intro {
+  color: var(--muted);
+  max-width: 720px;
+  margin-bottom: 28px;
+}
+
+.center {
+  text-align: center;
+}
+
+.species-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 22px;
+  margin-top: 28px;
+}
+
+.species-card {
+  background: var(--white);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px #49332312;
+}
+
+.species-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  display: block;
+}
+
+.species-card div {
+  padding: 16px;
+}
+
+.species-card p {
+  color: var(--muted);
+  font-size: .95rem;
+  margin-bottom: 0;
+}
+
+.soft {
+  background: #f2e7da;
+}
+
+.values {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 26px;
+}
+
+.value-card {
+  background: var(--white);
+  border-left: 5px solid var(--coral);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.value-card .emoji {
+  font-size: 2rem;
+}
+
+.shelter-panel {
+  background: var(--ocean-blue);
+  color: var(--white);
+  padding: 32px;
+  border-radius: 22px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.shelter-panel h2,
+.shelter-panel h3 {
+  color: var(--white);
+}
+
+.shelter-panel .button {
+  background: var(--coral);
+}
+
+footer {
+  background: var(--deep-blue);
+  color: var(--white);
+  text-align: center;
+  padding: 25px 7%;
+}
+
+footer p {
+  margin: 5px;
+}
+
+@media (max-width: 760px) {
+  header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  nav {
+    gap: 10px 15px;
+  }
+
+  .hero, .shelter-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 50px;
+  }
+
+  section {
+    padding: 48px 6%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🐶 Every Paw Matters</div>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#species">Dog Breeds</a>
+    <a href="#care">Dog Care</a>
+    <a href="#health">Dog Health</a>
+    <a href="#adoption">Adoption</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- ABOUT DOGS -->
+
+<section class="hero" id="about">
+
+  <div>
+    <div class="eyebrow">Love • Protect • Care</div>
+
+    <h1>Every Paw Matters</h1>
+
+    <p>
+      Dogs are loyal and loving companions who bring
+      happiness into our lives. They deserve a safe home,
+      nutritious food, proper healthcare, and affection.
+      Let's protect dogs and give every dog a happy life.
+    </p>
+
+    <a class="button" href="#care">Learn Dog Care</a>
+    <a class="button" href="#species">Explore Breeds</a>
+  </div>
+
+  <img
+    src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1000&q=85"
+    alt="Beautiful golden retriever dog">
+
+</section>
+
+<!-- DOG BREEDS -->
+
+<section id="species">
+
+  <div class="center">
+    <h2>Explore Different Dog Breeds</h2>
+
+    <p class="section-intro" style="margin-left:auto;margin-right:auto;">
+      Dogs come in different sizes, colours, and personalities.
+      Every dog is special and deserves love and care.
+    </p>
+  </div>
+
+  <div class="species-grid">
+
+    <article class="species-card">
+      <img
+        src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=700&q=80"
+        alt="Golden Retriever">
+
+      <div>
+        <h3>Golden Retriever</h3>
+        <p>
+          Golden Retrievers are friendly, intelligent,
+          playful, and known for their gentle nature.
+        </p>
+      </div>
+    </article>
+
+    <article class="species-card">
+      <img
+        src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=700&q=80"
+        alt="Pug">
+
+      <div>
+        <h3>Pug</h3>
+        <p>
+          Pugs are small, affectionate dogs with
+          charming personalities and friendly behaviour.
+        </p>
+      </div>
+    </article>
+
+    <article class="species-card">
+      <img
+        src="https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?auto=format&fit=crop&w=700&q=80"
+        alt="German Shepherd">
+
+      <div>
+        <h3>German Shepherd</h3>
+        <p>
+          German Shepherds are intelligent, active,
+          and loyal dogs often trained for service work.
+        </p>
+      </div>
+    </article>
+
+    <article class="species-card">
+      <img
+        src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=700&q=80"
+        alt="Labrador">
+
+      <div>
+        <h3>Labrador</h3>
+        <p>
+          Labradors are energetic and friendly dogs
+          that enjoy games and spending time with families.
+        </p>
+      </div>
+    </article>
+
+    <article class="species-card">
+      <img
+        src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=700&q=80"
+        alt="Indian Pariah Dog">
+
+      <div>
+        <h3>Indian Pariah Dog</h3>
+        <p>
+          Indian Pariah Dogs are smart, adaptable,
+          and hardy native dogs that make wonderful companions.
+        </p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- DOG CARE -->
+
+<section class="soft" id="care">
+
+  <div class="center">
+    <h2>How to Take Care of Dogs</h2>
+
+    <p class="section-intro" style="margin-left:auto;margin-right:auto;">
+      Proper care helps dogs stay healthy, active,
+      comfortable, and happy.
+    </p>
+  </div>
+
+  <div class="values">
+
+    <article class="value-card">
+      <div class="emoji">🥣</div>
+      <h3>Healthy Food</h3>
+      <p>
+        Give dogs nutritious food suitable for their age
+        and provide fresh drinking water every day.
+      </p>
+    </article>
+
+    <article class="value-card">
+      <div class="emoji">🚶</div>
+      <h3>Daily Exercise</h3>
+      <p>
+        Take dogs for regular walks and provide
+        safe opportunities to play and stay active.
+      </p>
+    </article>
+
+    <article class="value-card">
+      <div class="emoji">🛁</div>
+      <h3>Cleanliness</h3>
+      <p>
+        Maintain proper grooming, clean sleeping spaces,
+        and regular bathing when needed.
+      </p>
+    </article>
+
+    <article class="value-card">
+      <div class="emoji">❤️</div>
+      <h3>Love and Attention</h3>
+      <p>
+        Give dogs affection, companionship, training,
+        and a safe environment to live in.
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<!-- DOG HEALTH -->
+
+<section id="health">
+
+  <div class="center">
+    <h2>Dog Health & Safety</h2>
+
+    <p class="section-intro" style="margin-left:auto;margin-right:auto;">
+      Good healthcare and regular checkups help dogs
+      live longer and healthier lives.
+    </p>
+  </div>
+
+  <div class="values">
+
+    <article class="value-card">
+      <h3>Vaccination</h3>
+      <p>
+        Vaccinate dogs according to the veterinarian's
+        recommendations to protect them from diseases.
+      </p>
+    </article>
+
+    <article class="value-card">
+      <h3>Regular Checkups</h3>
+      <p>
+        Visit a veterinarian regularly to monitor
+        your dog's health and well-being.
+      </p>
+    </article>
+
+    <article class="value-card">
+      <h3>Dental Care</h3>
+      <p>
+        Maintain dental hygiene using suitable
+        dog toothbrushes and veterinary guidance.
+      </p>
+    </article>
+
+    <article class="value-card">
+      <h3>Safe Shelter</h3>
+      <p>
+        Provide comfortable shelter with shade,
+        clean bedding, and protection from extreme weather.
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<!-- DOG ADOPTION -->
+
+<section class="soft" id="adoption">
+
+  <div class="shelter-panel">
+
+    <div>
+      <div class="eyebrow" style="color:#d9f5dc;">
+        Adopt • Rescue • Protect
+      </div>
+
+      <h2>Give Every Dog a Loving Home</h2>
+
+      <p>
+        Many dogs are abandoned or live on the streets.
+        Adoption gives them another chance to experience
+        love, safety, and happiness.
+      </p>
+
+      <p>
+        Support animal shelters, help rescue organisations,
+        and encourage responsible pet ownership.
+      </p>
+    </div>
+
+    <div>
+      <h3>Our Commitment</h3>
+
+      <p>
+        We believe every dog deserves food, shelter,
+        medical care, kindness, and a loving home.
+      </p>
+
+      <a class="button" href="#about">Learn More</a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p><strong>🐶 Every Paw Matters</strong></p>
+  <p>Give them love. Give them care. Protect every paw.</p>
+  <p>© 2026 Every Paw Matters | Student Web Project</p>
+</footer>
+
+</body>
+</html>
+```
